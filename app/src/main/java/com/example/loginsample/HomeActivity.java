@@ -1,10 +1,7 @@
 package com.example.loginsample;
 
-import android.app.FragmentManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
-import android.app.FragmentManager;
 //import android.app.FragmentTransaction;
 
 import androidx.activity.EdgeToEdge;
@@ -16,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.loginsample.fragments.CuadrosFragment;
+import com.example.loginsample.fragments.ListaFragments;
 import com.example.loginsample.fragments.HomeFragment;
 import com.example.loginsample.fragments.MapaFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -26,7 +23,7 @@ public class HomeActivity extends AppCompatActivity {
     private androidx.fragment.app.FragmentManager fragmentManager=null;
     private FragmentTransaction fragmentTransaction=null;
     private HomeFragment homeFragment =null;
-    private CuadrosFragment cuadrosFragment =null;
+    private ListaFragments listaFragments =null;
     private MapaFragment mapaFragment =null;
 
     @Override
@@ -58,8 +55,8 @@ public class HomeActivity extends AppCompatActivity {
                     loadFragment(homeFragment);
                     return true;
                 }else if (menuItem.getItemId()==R.id.menu_cuadros){
-                    cuadrosFragment=CuadrosFragment.newInstance("","");
-                    loadFragment(cuadrosFragment);
+                    listaFragments = ListaFragments.newInstance("","");
+                    loadFragment(listaFragments);
                     return true;
                 }
                 else if (menuItem.getItemId()==R.id.menu_mapa){
@@ -77,10 +74,10 @@ public class HomeActivity extends AppCompatActivity {
     //METODO para cargar los fragmentos
     private void loadFragment(Fragment fragment){
         if (fragmentManager!=null){
-            //instaciar al fragment transaccion
+            //instanciar al fragment transaccion
             fragmentTransaction =fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.fragmentContainerView,fragment);
-            //eñ replace, con el fragment que se a crado antes, lo destruye
+            //el replace, con el fragment que se a creado antes, lo destruye
             fragmentTransaction.commit();
 
         }
