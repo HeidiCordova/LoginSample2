@@ -1,10 +1,15 @@
 package com.example.loginsample;
 
+<<<<<<< HEAD
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.app.FragmentManager;
+=======
+import android.os.Bundle;
+import android.view.MenuItem;
+>>>>>>> a4d120992573fdb82d35ebde060c065491cbb37a
 //import android.app.FragmentTransaction;
 
 import androidx.activity.EdgeToEdge;
@@ -16,7 +21,11 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+<<<<<<< HEAD
 import com.example.loginsample.fragments.CuadrosFragment;
+=======
+import com.example.loginsample.fragments.ListaFragments;
+>>>>>>> a4d120992573fdb82d35ebde060c065491cbb37a
 import com.example.loginsample.fragments.HomeFragment;
 import com.example.loginsample.fragments.MapaFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -26,7 +35,11 @@ public class HomeActivity extends AppCompatActivity {
     private androidx.fragment.app.FragmentManager fragmentManager=null;
     private FragmentTransaction fragmentTransaction=null;
     private HomeFragment homeFragment =null;
+<<<<<<< HEAD
     private CuadrosFragment cuadrosFragment =null;
+=======
+    private ListaFragments listaFragments =null;
+>>>>>>> a4d120992573fdb82d35ebde060c065491cbb37a
     private MapaFragment mapaFragment =null;
 
     @Override
@@ -58,8 +71,13 @@ public class HomeActivity extends AppCompatActivity {
                     loadFragment(homeFragment);
                     return true;
                 }else if (menuItem.getItemId()==R.id.menu_cuadros){
+<<<<<<< HEAD
                     cuadrosFragment=CuadrosFragment.newInstance("","");
                     loadFragment(cuadrosFragment);
+=======
+                    listaFragments = ListaFragments.newInstance("","");
+                    loadFragment(listaFragments);
+>>>>>>> a4d120992573fdb82d35ebde060c065491cbb37a
                     return true;
                 }
                 else if (menuItem.getItemId()==R.id.menu_mapa){
@@ -77,10 +95,17 @@ public class HomeActivity extends AppCompatActivity {
     //METODO para cargar los fragmentos
     private void loadFragment(Fragment fragment){
         if (fragmentManager!=null){
+<<<<<<< HEAD
             //instaciar al fragment transaccion
             fragmentTransaction =fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.fragmentContainerView,fragment);
             //eñ replace, con el fragment que se a crado antes, lo destruye
+=======
+            //instanciar al fragment transaccion
+            fragmentTransaction =fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragmentContainerView,fragment);
+            //el replace, con el fragment que se a creado antes, lo destruye
+>>>>>>> a4d120992573fdb82d35ebde060c065491cbb37a
             fragmentTransaction.commit();
 
         }
